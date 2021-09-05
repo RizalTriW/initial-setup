@@ -8,6 +8,6 @@ mkfs.xfs /dev/mapper/vg--docker-lv--volume && mkfs.xfs /dev/mapper/vg--docker-lv
 mount /dev/mapper/vg--docker-lv--compose /dockerized
 mount /dev/mapper/vg--docker-lv--volume /var/lib/docker
 df -h
-echo "/dev/mapper/vg--docker-lv--volume     /var/lib/docker xfs errors=remount-ro       0       1" >> /etc/fstab
-echo "/dev/mapper/vg--docker-lv--compose    /dockerized     xfs errors=remount-ro       0       1" >> /etc/fstab
+echo "/dev/mapper/vg--docker-lv--volume     /var/lib/docker xfs defaults       0       1" >> /etc/fstab
+echo "/dev/mapper/vg--docker-lv--compose    /dockerized     xfs defaults       0       1" >> /etc/fstab
 cat /etc/fstab
