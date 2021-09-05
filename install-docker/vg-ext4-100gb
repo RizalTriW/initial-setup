@@ -1,0 +1,14 @@
+#!/bin/bash
+
+lvmdiskscan
+vgcreate -s 10M vg-docker /dev/vdb
+lvcreate -L 60G -n lv-volume vg-docker
+lvcreate -l 100%FREE -n lv-compose vg-docker
+mkfs.ext4 /dev/mapper/vg--docker-lv--volume && mkfs.ext4 /dev/mapper/vg--docker-lv--compose
+mount /dev/mapper/vg--docker-lv--compose /dockerized
+mount /dev/mapper/vg--docker-lv--volume /var/lib/docker
+df -h
+
+echo "/dev/mapper/vg--docker-lv--volume     /var/lib/docker ext4 errors=remount-ro      0       1" >> /etc/fstab
+echo "/dev/mapper/vg--docker-lv--compose    /dockerized     ext4 errors=remount-ro	    0       1" >> /etc/fstab
+cat /etc/fstab

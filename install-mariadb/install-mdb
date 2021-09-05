@@ -1,0 +1,8 @@
+#!/bin/bash
+
+apt-get install software-properties-common dirmngr apt-transport-https -y
+apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.biznetgio.com/mariadb/repo/10.4/ubuntu focal main'
+
+apt update
+apt install mariadb-server -y

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+apt update && apt upgrade -y && apt install portsentry -y
+cat /root/initial-setup/sshd_config > /etc/ssh/sshd_config
+cp -R /root/initial-setup/sshd_config.d /etc/ssh/
+cp -R /root/initial-setup/keys /etc/ssh/
+
+systemctl restart ssh
+
+cat /root/initial-setup/.git-prompt.sh > /root/.git-prompt.sh
+cat /root/initial-setup/.bash_aliases > /root/.bash_aliases
+
+source /root/.bash_aliases
