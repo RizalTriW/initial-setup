@@ -1,0 +1,10 @@
+#!/bin/bash
+
+apt install nfs-kernel-server -y
+mkdir -p /storage/nfs
+chown nobody:nogroup /storage/nfs
+chmod -R 777 /storage/nfs
+
+echo "/storage/nfs    10.74.213.0/24(rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports
+exportfs -a
+systemctl restart nfs-kernel-server

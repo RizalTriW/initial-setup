@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt-get install nfs-common
+mkdir -p /mnt/nfs
+mount 116.206.196.149:/var/nfs	/mnt/nfs
+
+echo "116.206.196.149:/var/nfs        /mnt/nfs        nfs4    auto,noatime,nolock,bg,nfsvers=4,intr,tcp,actimeo=1800  0       0" >> /etc/fstab
