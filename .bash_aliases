@@ -18,3 +18,6 @@ alias debug-s3fs='s3fs vol-yukbisnis /mnt -o url=https://is3.cloudhost.id/ -o us
 
 #alias Portsentry
 alias log-porsentry='tail -f /var/lib/portsentry/portsentry.history'
+
+#docker swarm
+alias deploy-stack='docker stack deploy --with-registry-auth --prune -c stack.yml'
