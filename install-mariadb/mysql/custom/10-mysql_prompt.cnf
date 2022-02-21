@@ -1,0 +1,4 @@
+[mysql]
+prompt	= MariaDB-Cluster-01 [\d]>\_
+
+

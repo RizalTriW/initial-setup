@@ -1,0 +1,20 @@
+#Replication slave to Galera Cluster
+server-id       = 02
+relay-log-index = /var/log/mysql/slave-relay-bin.index
+relay-log       = /var/log/mysql/slave-relay-bin
+gtid_domain_id  = 99
+
+log-bin         = /var/log/mysql/slave-bin
+log-bin-index   = /var/log/mysql/slave-bin.index
+binlog_format   = mixed
+
+slave_parallel_threads	= 8
+slave_parallel_mode	= optimistic
+read_only
+binlog_do_db		= yb_master
+binlog_do_db		= yb_gateway
+binlog_do_db		= yb_yubiid
+binlog_do_db		= yb_payment
+binlog_do_db		= yb_shipping
+binlog_do_db		= yb_mail
+

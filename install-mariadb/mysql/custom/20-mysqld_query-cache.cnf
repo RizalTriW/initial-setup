@@ -1,0 +1,6 @@
+[mysqld]
+# Query Cache Configuration
+query_cache_limit       = 2048M
+query_cache_size        = 2048M
+
+

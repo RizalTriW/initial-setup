@@ -1,0 +1,6 @@
+[mysqld_safe]
+log_error	= /var/log/mysql/mariadb-error.log
+#skip_log_error
+#syslog
+
+

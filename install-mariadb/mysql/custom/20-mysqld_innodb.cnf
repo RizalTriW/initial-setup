@@ -1,0 +1,7 @@
+[mysqld]
+# InnoDB tuneup
+innodb_buffer_pool_size         = 8G
+innodb_buffer_pool_instances    = 8
+innodb_log_file_size            = 512M
+
+

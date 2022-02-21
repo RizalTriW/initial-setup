@@ -1,0 +1,7 @@
+[mysqld]
+# Replication config for master node
+server-id	= 1
+binlog_do_db	= yb_master
+binlog_do_db	= yb_gateway
+
+

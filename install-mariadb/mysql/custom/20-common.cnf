@@ -1,0 +1,28 @@
+[mysqld]
+#
+# * Fine Tuning
+#
+max_connections         = 1024
+max_allowed_packet      = 8G
+port			= 44026
+bind-address		= 0.0.0.0
+net_read_timeout	= 28800
+net_write_timeout	= 28800
+
+# Logging level
+log_warnings            = 2
+
+#
+# * MyISAM
+#
+key_buffer_size         = 8G
+
+
+[mysqldump]
+max_allowed_packet      = 2G
+
+
+[isamchk]
+key_buffer              = 8G
+
+

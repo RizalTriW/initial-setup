@@ -1,0 +1,15 @@
+# Galera node as master
+[galera]
+wsrep_gtid_mode		= on
+wsrep_gtid_domain_id	= 0
+server-id		= 01
+log_slave_updates	= on
+log_bin                 = /var/log/mysql/mariadb-bin
+log_bin_index           = /var/log/mysql/mariadb-bin.index
+gtid_domain_id		= 1
+
+binlog_do_db		= yb_master
+binlog_do_db		= yb_gateway
+binlog_do_db		= yb_yubiid
+binlog_do_db		= yb_payment
+binlog_do_db		= yb_mail

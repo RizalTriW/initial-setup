@@ -1,0 +1,16 @@
+[mysqld]
+# Required mysqld configuration
+bind-address			= 0.0.0.0
+default_storage_engine		= InnoDB
+binlog_format			= row
+innodb_autoinc_lock_mode	= 2
+
+[galera]
+# Galera's mandatory configuration
+wsrep_on			= ON
+wsrep_provider			= /usr/lib/galera/libgalera_smm.so
+wsrep_cluster_address		= gcomm://10.74.213.160,10.74.213.239,10.74.213.22
+wsrep_cluster_name		= mariadb-galera-cluster
+wsrep_node_address		= 10.74.213.160
+wsrep_node_name			= Pro-DBClustering-01
+wsrep_sst_method		= rsync

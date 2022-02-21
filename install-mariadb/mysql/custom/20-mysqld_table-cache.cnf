@@ -1,0 +1,5 @@
+[mysqld]
+# Table Cache Configuration
+table_definition_cache  = 5000
+
+

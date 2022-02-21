@@ -1,0 +1,11 @@
+[mysqld]
+# Replication config for slave nodes
+server-id		= 8
+relay_log		= /var/log/mysql/relay-bin
+slave_parallel_threads	= 8
+slave_parallel_mode	= optimistic
+read_only
+binlog_do_db		= yb_master
+binlog_do_db		= yb_gateway
+
+
